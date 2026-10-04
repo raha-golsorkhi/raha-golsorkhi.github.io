@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raha Golsorkhi | Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --oxblood:#4a0e17; --wine:#6e1423; --crimson:#8c1c2f; --beige:#f0e4d0; --sand:#dccab0; --ink:#2b0d12;
+  --serif:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif; --sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--beige);color:var(--ink);font:400 1.05rem/1.65 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--crimson);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--beige)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--oxblood);color:var(--beige)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav b{font:600 1.1rem var(--serif)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{text-decoration:underline;text-underline-offset:5px}
+@media(max-width:620px){nav ul{gap:12px}nav a{font-size:.85rem}}
+
+.dark{background:var(--oxblood);color:var(--beige)}
+header.hero{padding:clamp(60px,12vw,140px) 0 clamp(50px,9vw,110px);background:radial-gradient(900px 400px at 85% 0,var(--wine),transparent 70%),var(--oxblood);color:var(--beige)}
+h1{font:800 clamp(3rem,11vw,8rem)/.92 var(--serif);letter-spacing:-.03em;margin:0 0 28px}
+h1 span{display:block;overflow:hidden}
+h1 span i{display:block;font-style:normal;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+h1 span:nth-child(2) i{animation-delay:.15s;color:var(--sand)}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.lede{max-width:34em;font-size:1.25rem;color:var(--sand);margin:0 0 34px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 24px;border:2px solid var(--beige);border-radius:999px;text-decoration:none;font-weight:600;transition:background .2s,color .2s}
+.btn.fill{background:var(--beige);color:var(--oxblood)}
+.btn:hover{background:var(--crimson);border-color:var(--crimson);color:var(--beige)}
+
+section{padding:clamp(56px,8vw,100px) 0}
+h2{font:600 clamp(2rem,5vw,3.2rem)/1.05 var(--serif);margin:0 0 36px;letter-spacing:-.02em}
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start}
+.about p{margin:0 0 1.1em;max-width:62ch}
+.facts{border-left:3px solid var(--crimson);padding-left:24px;margin:0}
+.facts dt{font:600 .9rem var(--sans);color:var(--crimson);margin-top:18px}
+.facts dt:first-child{margin-top:0}
+.facts dd{margin:2px 0 0;font:600 1.15rem/1.3 var(--serif)}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--sand)}
+.tl li{position:relative;padding:0 0 12px 28px}
+.tl li::before{content:"";position:absolute;left:-8px;top:12px;width:14px;height:14px;border-radius:50%;background:var(--crimson);border:3px solid var(--oxblood)}
+details{border-bottom:1px solid rgba(240,228,208,.25)}
+summary{cursor:pointer;list-style:none;padding:14px 0;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary strong{font:600 1.35rem/1.2 var(--serif);display:block}
+summary small{color:var(--sand);font-size:.95rem}
+summary time{white-space:nowrap;font-size:.9rem;color:var(--sand)}
+summary::after{content:"+";font:600 1.6rem var(--serif);color:var(--sand);margin-left:8px}
+details[open] summary::after{content:"\2212"}
+details ul{margin:0 0 18px;padding-left:20px;max-width:70ch;color:var(--beige)}
+details li{margin-bottom:8px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--oxblood);color:var(--beige);padding:28px;border-radius:6px;display:flex;flex-direction:column}
+.card.win{background:var(--crimson)}
+.card h3{font:600 1.5rem/1.15 var(--serif);margin:0 0 4px}
+.card .tag{color:var(--sand);font-size:.9rem;margin:0 0 14px}
+.card p{margin:0 0 16px;flex:1}
+.card a{font-weight:600}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px;padding:0;list-style:none}
+.stack li{border:1px solid rgba(240,228,208,.45);border-radius:999px;padding:2px 11px;font-size:.85rem}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.chip{font:500 .95rem var(--sans);background:transparent;color:var(--beige);border:2px solid var(--beige);border-radius:999px;padding:7px 18px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--beige);color:var(--oxblood)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:34px}
+.skills section{padding:0;transition:opacity .25s}
+.skills h3{font:600 1.3rem var(--serif);margin:0 0 10px}
+.skills p{margin:0;color:var(--sand)}
+.skills .off{opacity:.2}
+
+.contact{text-align:left}
+.contact .big{font:800 clamp(1.6rem,5.5vw,3.6rem)/1.1 var(--serif);letter-spacing:-.02em;word-break:break-word}
+footer{background:var(--ink);color:var(--sand);padding:22px 0;font-size:.9rem}
+@media(prefers-reduced-motion:reduce){h1 span i{animation:none}html{scroll-behavior:auto}}
+
+.portrait{width:100%;max-width:340px;aspect-ratio:4/5;object-fit:cover;border-radius:4px;margin:0 0 28px;display:block;border:6px solid var(--oxblood)}
+.facts a{color:var(--crimson);text-decoration-thickness:2px;text-underline-offset:3px}
+.ahero{padding:clamp(50px,9vw,100px) 0;background:radial-gradient(900px 400px at 85% 0,var(--wine),transparent 70%),var(--oxblood);color:var(--beige)}
+.ahero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center}
+.ahero h1{font-size:clamp(2.4rem,7vw,5rem);line-height:1;margin:0 0 20px}
+.ahero p{color:var(--sand);font-size:1.15rem;max-width:34em;margin:0}
+.ahero img{width:100%;border-radius:4px;border:6px solid var(--beige);display:block}
+@media(max-width:760px){.ahero .wrap{grid-template-columns:1fr}}
+.pull{margin:0 0 20px;padding:0 0 0 28px;border-left:5px solid var(--crimson);font:600 clamp(1.5rem,3.6vw,2.4rem)/1.25 var(--serif);max-width:30em}
+.by{margin:0 0 56px;padding-left:33px;color:var(--wine)}
+.by b{display:block;color:var(--ink)}
+.hl{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.hl article{background:var(--oxblood);color:var(--beige);padding:28px;border-radius:6px}
+.hl h3{font:600 1.4rem/1.2 var(--serif);margin:0 0 10px}
+.hl p{margin:0 0 14px}
+.hl q{display:block;color:var(--sand);font-style:italic;border-left:3px solid var(--crimson);padding-left:14px}
+.gal{display:grid;grid-template-columns:1fr 1.5fr;gap:20px;align-items:start}
+.gal figure{margin:0}
+.gal img{width:100%;display:block;border-radius:4px;border:6px solid var(--beige)}
+.gal figcaption{color:var(--sand);font-size:.95rem;margin-top:10px}
+@media(max-width:760px){.gal{grid-template-columns:1fr}}
+
+.exp{background:#f9f3e7}
+.role{display:grid;grid-template-columns:230px 1fr;gap:36px;padding:38px 0;border-top:3px solid var(--crimson)}
+.role:last-of-type{border-bottom:3px solid var(--crimson)}
+.meta time{display:block;font:600 1.15rem/1.3 var(--serif);color:var(--crimson)}
+.meta time+time{margin-top:4px;color:var(--wine);font-size:1rem;font-weight:400}
+.meta p{margin:10px 0 0;font-weight:600;color:var(--ink)}
+.badge{display:inline-block;background:var(--crimson);color:var(--beige);font-weight:600;font-size:.85rem;padding:3px 12px;border-radius:999px;margin-bottom:12px}
+.body h3{font:800 clamp(1.6rem,3.4vw,2.2rem)/1.1 var(--serif);margin:0 0 16px;letter-spacing:-.01em;color:var(--oxblood)}
+.body ul.pts{list-style:none;margin:0 0 18px;padding:0;max-width:68ch}
+.body ul.pts li{position:relative;padding-left:24px;margin-bottom:11px}
+.body ul.pts li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;background:var(--crimson);border-radius:2px;transform:rotate(45deg)}
+.body strong{color:var(--wine);font-weight:600}
+.tech{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tech li{background:var(--oxblood);color:var(--beige);border-radius:999px;padding:3px 13px;font-size:.88rem}
+.role .more{display:inline-block;margin:0 0 16px;font-weight:600;color:var(--crimson)}
+@media(max-width:760px){.role{grid-template-columns:1fr;gap:14px}}
+
+/* v4 refinements */
+body{font-weight:400;letter-spacing:.005em}
+h2{font-size:clamp(2.5rem,6vw,4rem);font-weight:600}
+.card h3{font-size:1.9rem}.hl h3{font-size:1.75rem}.body h3{font-size:clamp(1.9rem,3.8vw,2.6rem);font-weight:700}
+.facts dd{font-size:1.4rem}.pull{font-size:clamp(1.8rem,4vw,2.8rem)}.meta time{font-size:1.3rem}
+.skills h3{font-size:1.6rem}.ahero h1{font-weight:600}
+header.hero{position:relative;overflow:hidden;text-align:center;min-height:min(92vh,780px);display:flex;align-items:center;padding:90px 0 110px}
+header.hero .wrap{position:relative;z-index:2;width:100%}
+.codebg{position:absolute;inset:0;z-index:0;overflow:hidden;filter:blur(2.5px);opacity:.3;font:500 clamp(13px,1.6vw,19px)/1.75 "Courier New",monospace;color:var(--sand);padding:24px 36px;white-space:pre;text-align:left}
+.keys{position:absolute;z-index:0;left:-8%;right:-8%;bottom:-14%;height:44%;filter:blur(2.5px);opacity:.4;transform:perspective(650px) rotateX(52deg);transform-origin:bottom;background:repeating-linear-gradient(90deg,transparent 0 56px,var(--oxblood) 56px 64px),repeating-linear-gradient(0deg,transparent 0 56px,var(--oxblood) 56px 64px),var(--sand)}
+header.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(74,14,23,.78),rgba(74,14,23,.5) 55%,rgba(74,14,23,.85))}
+.name{font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(2.6rem,9vw,6.4rem);line-height:1;margin:0 0 18px}
+.name span{display:inline-block}
+.sub{font:500 clamp(1.4rem,3vw,2.1rem)/1.3 var(--serif);font-style:italic;color:var(--beige);margin:0 0 34px}
+header.hero .btns{justify-content:center}
+.btn{font-family:var(--sans);letter-spacing:.03em}
+.scroll{position:absolute;z-index:2;left:50%;bottom:26px;transform:translateX(-50%);width:48px;height:48px;border:2px solid var(--sand);border-radius:50%;display:grid;place-items:center}
+.scroll svg{width:22px;height:22px;stroke:var(--beige);fill:none;stroke-width:3}
+.honour{display:inline-block;margin:-10px 0 26px;padding:8px 18px;border:2px solid var(--crimson);border-radius:999px;font:600 1.15rem/1.2 var(--serif);font-style:italic;color:var(--wine)}
+.cform{display:grid;gap:18px;max-width:640px;margin-top:30px}
+.cform label{display:grid;gap:6px;font-weight:500}
+.cform input,.cform textarea{font:inherit;color:var(--ink);background:#fbf6ec;border:2px solid var(--oxblood);border-radius:6px;padding:12px 14px;width:100%}
+.cform textarea{min-height:150px;resize:vertical}
+.cform .hp{position:absolute;left:-9999px}
+.cform button{justify-self:start;cursor:pointer;background:var(--oxblood);color:var(--beige);border-color:var(--oxblood);font-size:1.05rem}
+.cform button:hover{background:var(--crimson);border-color:var(--crimson)}
+#cstatus{min-height:1.5em;margin:0;font-weight:500;color:var(--wine)}
+
+/* v5 */
+html{scroll-behavior:auto}
+#home,#award{transition:opacity .28s ease}
+.fade-out{opacity:0}
+nav a[aria-current]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px}
+.exp{padding:64px 0 70px}
+.exp .lead{margin:-14px 0 30px;max-width:60ch;color:var(--wine)}
+.tl2{position:relative;padding-left:46px}
+.tl2::before{content:"";position:absolute;left:13px;top:8px;bottom:8px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--crimson),var(--sand))}
+.entry{position:relative;margin:0 0 20px;background:#fffaf1;border:1px solid var(--sand);border-radius:8px;padding:18px 24px 20px;box-shadow:0 2px 0 rgba(74,14,23,.06)}
+.entry::before{content:"";position:absolute;left:-42px;top:24px;width:18px;height:18px;border-radius:50%;background:var(--crimson);border:4px solid #f9f3e7;box-shadow:0 0 0 2px var(--crimson)}
+.entry.now{border-color:var(--crimson);border-width:2px}
+.entry.now::before{background:#f9f3e7;box-shadow:0 0 0 3px var(--crimson)}
+.entry::after{content:"";position:absolute;left:-24px;top:32px;width:24px;height:2px;background:var(--crimson)}
+.ehead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 18px;margin-bottom:8px}
+.ehead h3{font:700 clamp(1.7rem,3vw,2.2rem)/1.1 var(--serif);margin:0;color:var(--oxblood)}
+.when{font:600 1rem var(--sans);color:var(--crimson);white-space:nowrap}
+.when small{display:block;font-weight:400;color:var(--wine);text-align:right}
+.org{margin:0 0 10px;font-weight:500;color:var(--wine)}
+.entry ul.pts{list-style:none;margin:0 0 12px;padding:0;max-width:none}
+.entry ul.pts li{position:relative;padding-left:20px;margin:0 0 6px;font-size:.98rem;line-height:1.5}
+.entry ul.pts li::before{content:"";position:absolute;left:2px;top:.55em;width:7px;height:7px;background:var(--crimson);border-radius:2px;transform:rotate(45deg)}
+.entry strong{color:var(--wine);font-weight:600}
+.entry .tech{gap:6px}
+.entry .tech li{font-size:.82rem;padding:2px 11px}
+.entry .more{display:inline-block;margin:0 0 10px;font-weight:600;color:var(--crimson)}
+.badge2{display:inline-block;background:var(--crimson);color:var(--beige);font-weight:600;font-size:.78rem;padding:2px 10px;border-radius:999px;margin-left:10px;vertical-align:middle}
+@media(max-width:620px){.when small{text-align:left}.tl2{padding-left:38px}.entry::before{left:-34px}.entry::after{left:-16px;width:16px}}
+.card{overflow:hidden}
+.pimg{display:block;width:calc(100% + 56px);max-width:none;margin:-28px -28px 20px;aspect-ratio:16/10;object-fit:cover;background:var(--wine)}
+
+/* v6 type: Bodoni Moda + Montserrat */
+body{font-size:1rem;line-height:1.75;font-weight:400;letter-spacing:0}
+h2{font-size:clamp(2.1rem,5vw,3.3rem);font-weight:500;letter-spacing:-.01em;line-height:1.1}
+.name{font-size:clamp(1.9rem,7vw,5rem);font-weight:500;letter-spacing:.05em}
+.sub{font-size:clamp(1.1rem,2.3vw,1.55rem);font-weight:500;letter-spacing:.02em}
+.btn{font-size:.9rem;letter-spacing:.08em;font-weight:500}
+nav b{font-size:1.15rem;letter-spacing:.04em}
+nav a{font-size:.85rem;letter-spacing:.06em;font-weight:500}
+.card h3{font-size:1.5rem;font-weight:600}.hl h3{font-size:1.4rem;font-weight:600}
+.facts dd{font-size:1.15rem;font-weight:500}.facts dt{font-size:.8rem;letter-spacing:.05em}
+.pull{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:500;line-height:1.35}
+.skills h3{font-size:1.4rem;font-weight:600}
+.ehead h3{font-size:clamp(1.45rem,2.5vw,1.85rem);font-weight:600}
+.entry ul.pts li{font-size:.93rem;line-height:1.6}
+.when{font-size:.88rem;letter-spacing:.03em}.org{font-size:.92rem}
+.ahero h1{font-size:clamp(2rem,5.4vw,3.8rem);font-weight:500;line-height:1.08}
+.contact .big{font-size:clamp(1.25rem,4.4vw,2.9rem);font-weight:600}
+.honour{font-size:1rem;font-weight:500}
+.exp .lead{font-size:.95rem}
+.lede,.ahero p{font-size:1.05rem}
+
+/* v7 */
+.lap{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.5;filter:blur(.7px)}
+header.hero::after{background:linear-gradient(180deg,rgba(74,14,23,.7),rgba(74,14,23,.42) 50%,rgba(74,14,23,.8))}
+.sub{font-size:clamp(1.9rem,5vw,3.4rem);font-weight:500;letter-spacing:.02em;margin-bottom:38px}
+
+/* v8 */
+.bin{position:absolute;inset:0;z-index:0;overflow:hidden;white-space:pre;text-align:left;font:500 clamp(14px,1.7vw,21px)/1.7 "Courier New",monospace;color:var(--sand);opacity:.34;padding:14px 20px;filter:blur(.4px);-webkit-mask-image:radial-gradient(ellipse at center,rgba(0,0,0,.45),#000 80%);mask-image:radial-gradient(ellipse at center,rgba(0,0,0,.45),#000 80%)}
+.plinks{display:flex;flex-wrap:wrap;gap:6px 22px}
+.plinks a{color:var(--beige);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+
+/* v9 */
+.entry strong{color:inherit;font-weight:600}
+.sk{background:#f9f3e7}
+.sk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.sk-card{background:#fffaf1;border:1px solid var(--sand);border-top:5px solid var(--crimson);border-radius:8px;padding:22px 26px 26px}
+.sk-card h3{font:600 1.5rem/1.2 var(--serif);margin:0 0 4px;color:var(--oxblood)}
+.sk-card .hint{margin:0 0 16px;font-size:.92rem;color:var(--wine)}
+.sk-card ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:9px}
+.sk-card li{background:var(--beige);color:var(--ink);border:1px solid var(--sand);border-radius:6px;padding:6px 14px;font-size:.95rem;font-weight:500;line-height:1.3}
+@media(max-width:760px){.sk-grid{grid-template-columns:1fr}}
+
+/* v10 skills */
+.sk-grid{align-items:start}
+.sk-col{display:flex;flex-direction:column;gap:22px}
+.sk-card.rd{background:var(--oxblood);border-color:var(--oxblood);border-top-color:var(--crimson)}
+.sk-card.rd h3{color:var(--beige)}
+.sk-card.rd .hint{color:var(--sand)}
+.sk-card.rd li{background:var(--beige);color:var(--ink);border-color:var(--beige)}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>RG</b>
+<ul><li><a href="#about">About</a></li><li><a href="#award">Award</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+<div id="home">
+<header class="hero">
+<div class="bin" aria-hidden="true">1 0 1 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 1 0 0 0 1 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 1 0 0 1 0 1 0 1 1 0 0 1 1 1 1 1 0 0 1 1 0 0 1 1 1 1 1 0 1 1 0 0 1 0 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 1 0 0 0 0
+0 0 0 0 1 0 1 1 0 0 1 1 1 0 0 1 1 1 1 1 0 1 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 1 1 1 0 0 0 1 1 1 0 0 0 1 0 0 1 0 1 1 0 1 0 1 0 0 0 1 0 0 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 0 1 0 1 0 1 1 0 0 1 0 1 0 1
+1 0 1 1 1 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 1 1 1 0 0 1 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1 1 0 1 1 1 0 1 0 1 0 1 0 1 1 1 0 0 1 0 0 1 0 0 1 0 1 0 1 0 0 1 1 0 0 0 1 1 1 1 0 1 1 0 1 0 1 1 1
+0 1 1 1 0 0 0 0 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 0 1 0 1 0 0 1 0 0 0 1 0 1 0 1 1 1 0 0 0 0 0 1 0 0 0 1 1 0 1 1 0 1 1 0 1 0 0 0 0 1 0 1 0 1 1 1 1 0 0 1 0 0 1 1 0 0 0 0 1 1 0 0 0 1 1 0 1 0 1 0 0 1 1 0 1 1 1 1 0 0 1 0 1 0 0
+1 1 0 1 1 0 0 0 0 1 0 0 1 0 1 0 1 1 0 0 0 1 1 1 0 1 0 0 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 1 1 0 1 0 0 0 1 1 0 1 0 0 0 1 1 1 0 1 1 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 1 1 1 1 1 1 0 0 1 0 1 0 1 1 0 1 1 1 0 0 0 0 0 1 1 0 1 0 1 0 1 1
+1 0 0 0 1 1 1 1 0 1 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 1 1 0 1 1 1 0 1 0 0 1 0 0 1 1 1 0 1 1 0 1 0 0 0 1 1 0 1 1 0 0 0 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 0 0 0 0 1 0 1 0 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 0 0 0 1 0
+1 1 1 1 1 0 0 0 1 1 1 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 0 0 1 1 1 1 0 1 0 0 0 1 1 0 0 0 1 1 0 1 0 1 1 0 1 0 1 1 1 1 0 0 1 0 0 1 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 1 1 0 0 0 1 0
+0 1 0 1 1 1 1 1 0 0 0 0 1 0 1 1 0 0 1 1 1 1 0 0 1 0 1 1 0 1 1 1 0 1 0 1 0 1 0 1 0 0 1 0 0 1 1 1 1 0 1 1 1 1 0 0 0 0 0 1 1 1 1 1 1 0 1 0 0 1 0 0 1 1 1 1 0 0 1 0 0 1 0 0 1 1 0 1 0 0 1 0 0 0 1 1 1 0 0 0 1 1 0 0 1 1 1 1 1 1
+1 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0 0 1 0 0 0 1 0 1 1 0 1 0 0 0 0 0 0 1 0 1 1 0 0 1 0 0 1 1 0 0 0 1 0 0 0 1 1 1 0 1 0 0 0 1 1 0 1 0 1 0 0 0 1 1 1 1 1 1 0 1 1 1 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 0 0 1 0 1 0 0 1 1 0 0 0 0
+1 1 0 1 0 0 1 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 1 1 1 1 1 0 1 1 1 1 1 0 0 0 1 1 0 1 1 0 1 1 0 0 0 1 1 1 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 1 0 0 0 1 1 0 1 1 1 0 1 1 0 1 0 1 1 0 0 0 1 0 1 1 1 0 1 0 0 1 1 0 1
+1 1 1 1 1 0 1 1 0 1 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 1 0 0 0 0 0 1 1 0 1 0 1 1 0 0 1 1 0 0 0 0 0 1 0 0 0 1 1 1 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 1 0 1 0 1 0 1 1 1 0 1 0 0 0 1 0 0 0 1 1 0 1 1 1 1 0 0 0 0 1
+0 0 0 1 0 1 1 0 1 1 1 0 0 1 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 1 1 1 1 1 0 1 1 1 0 1 1 1 1 0 1 0 1 0 1 1 0 0 0 1 0 1 0 0 1 0 0 1 1 0 1 0 1 1 1 0 1 0 0 1 0 0 0 1 0 1 1 0 1 1 0
+1 0 1 0 1 1 1 0 1 0 1 0 0 1 1 0 1 1 0 1 1 1 0 0 1 1 0 0 1 1 0 0 0 1 1 0 0 1 0 1 0 0 0 0 1 0 0 1 1 1 1 0 0 0 1 0 1 1 0 0 1 1 0 1 1 0 0 1 1 0 0 1 1 0 0 0 0 1 1 1 1 0 1 0 1 0 1 1 1 1 0 1 0 1 0 1 1 0 0 1 0 0 0 1 0 1 0 1 0 1
+1 1 1 0 0 1 0 1 0 1 1 1 1 0 0 0 1 1 1 1 0 0 1 1 0 1 1 0 0 0 0 0 1 0 0 1 1 1 1 0 1 1 0 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 0 1 0 1 1 0 0 1 0 1 0 0 0 0 1 1 0 0 0 0 1 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 1 0 0 1 1 0 1 1 0 1 0 1 0 0 0 1
+1 1 1 1 1 1 1 0 0 1 0 0 0 1 0 1 1 0 0 0 1 0 1 0 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 0 1 0 1 1 0 0 0 1 1 0 1 1 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1 1 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0 0 1 0 1 1 0 0 1 0 0 0 1 0 0 0
+0 0 0 0 1 0 1 0 1 0 0 1 0 0 1 1 1 1 0 0 0 0 0 0 1 1 1 0 1 0 1 1 1 1 0 0 0 1 0 1 1 1 1 1 1 1 1 0 1 0 0 1 1 0 1 1 1 0 1 1 0 1 1 1 1 0 0 1 0 0 1 1 1 0 1 1 0 0 1 0 1 1 0 1 0 1 1 0 1 0 0 1 1 1 1 0 0 0 0 0 0 1 1 1 1 0 0 0 1 1
+0 1 1 0 0 1 0 1 1 0 0 0 0 1 0 1 1 1 0 1 0 1 0 1 0 0 1 0 0 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 1 0 0 0 1 0 0 1 1 0 1 1 1 1 1 0 1 1 1 0 1 0 0 0 1 0 0 0 0 0 1 0 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 1 0 1 0
+1 1 1 0 0 0 1 1 1 0 1 1 0 1 1 1 0 0 0 0 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 1 0 1 0 1 0 1 1 0 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0 1 0 0 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 1 1 0 0 0 0 0 0 0 0
+0 1 1 0 0 0 0 1 0 1 0 1 0 1 0 0 0 1 0 1 1 1 0 0 0 1 0 0 0 0 1 1 0 0 1 1 0 1 0 1 1 1 0 1 1 1 1 0 1 0 1 0 1 0 1 0 0 0 1 1 0 0 0 0 1 1 1 0 0 0 1 1 0 0 1 0 0 1 0 0 1 0 1 1 0 0 0 1 0 1 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 1 1 1 1
+1 0 0 1 0 0 1 1 0 1 0 0 1 1 1 1 1 0 1 0 0 0 0 1 1 0 1 1 1 0 0 0 1 1 1 0 0 1 0 1 1 0 1 0 0 1 0 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 0 1 1 0 0 1 1 0 1 0 1 0 0 0 1 1 1 1 1 1 1 1 1 0 1 1 0 0 0 0 1 1 1 0 0 1 1 1 1 1
+0 0 1 1 1 0 1 0 0 1 1 1 0 1 0 0 1 0 0 0 1 0 1 0 0 1 0 1 1 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 0 0 1 0 0 1 0 1 1 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 1 1 1 1 1 0 0 1 0 1 1 1 1 0 0 0 0 0 1 1 0 0 1 1 1 0 1 1 1
+1 0 0 1 1 0 1 0 1 1 1 0 1 0 1 0 1 0 0 0 0 0 1 0 1 1 0 0 1 1 0 1 1 0 1 1 0 0 1 0 1 1 1 0 1 0 0 0 0 1 1 0 0 1 0 1 0 0 0 1 0 0 0 1 1 0 0 1 0 0 1 0 1 1 1 1 1 0 1 0 0 1 1 1 0 1 0 1 1 0 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 1 0 0 1 1
+1 1 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 1 0 1 1 1 1 1 0 0 1 0 1 0 0 1 0 0 0 1 0 0 0 1 1 1 0 0 1 0 0 1 1 0 0 0 1 0 1 1 0 0 0 1 0 1 0 0 1 1 0 0 1 0 1 1 0 0 0 1 1 0 0 1 1 0 0 1 1 1 1 1 0 0 0 0 1 1 0 1 1 0 1 1 1 0 1 0 1 0 1 1 0 0
+0 0 0 1 0 1 1 0 0 0 1 1 1 0 1 1 0 1 0 1 1 0 0 0 0 1 0 0 1 1 1 0 1 0 0 0 0 0 1 1 0 0 1 1 0 0 1 0 0 1 0 1 0 0 1 1 0 1 0 0 0 1 1 0 1 1 0 1 0 1 1 1 0 1 0 0 1 1 1 1 1 0 1 1 0 0 0 1 0 0 1 1 1 0 1 1 1 0 0 0 0 0 0 1 0 0 1 1 0 1
+0 0 0 1 0 1 0 0 0 1 1 0 0 1 0 0 1 0 1 0 0 1 0 0 0 1 1 0 0 1 0 0 0 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 1 0 0 0 1 1 0 1 0 1 0 0 1 0 0 1 0 0 1 1 0 1 1 1 0 0 1 0 1 1 0 0 0 0 1 1 0 1 1 0 0 1 1 0 1 0 0 0 0 1 1 1 1 1 1 1 0 1 1 1 0 0
+0 1 0 0 0 1 1 1 0 1 1 0 0 0 0 1 0 1 1 0 0 0 1 1 1 0 1 1 1 0 1 1 1 1 0 0 1 0 0 0 0 1 1 1 1 1 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 1 0 1 1 0 1 1 0 0 1 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 1 1 0 1 1 1 0 0 1 0 0 1 1 1
+1 1 0 0 1 1 0 1 1 0 0 0 0 0 0 0 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 0 1 0 1 0 1 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 1 0 1 1 0 1 1 1 0 1 0 0 0 0 1 1 0 0 1 1 1 0 0 1 0 1 1 0 0 1 0 1 1 1 1 1 0 0 1 1 0 1 1 0 1 0 1 0 0 1 1 0 0 0 1 0 1
+0 1 0 1 0 0 0 0 0 1 0 1 0 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 1 1 0 1 0 0 0 1 0 0 1 1 0 0 0 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 1 0 0 0 0 0 0 1 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 0 0
+1 1 1 1 1 0 0 0 1 0 0 1 0 0 0 1 0 0 1 1 1 1 0 1 0 1 1 0 1 1 1 1 0 1 1 1 1 0 1 1 0 0 0 0 1 1 0 1 1 1 1 0 0 0 1 0 0 1 1 1 1 0 1 1 0 1 0 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1 0 1 0 0 1 0 0 1 0 0 1 1 1 1 1 0 0 1 1 1 1 1 0 0 1 1 1 0
+0 0 0 1 0 1 1 1 1 0 0 0 0 0 0 1 0 0 1 0 0 1 1 0 1 0 1 0 0 1 1 0 0 0 1 1 0 1 1 1 1 1 1 0 1 1 0 1 1 1 1 0 0 0 0 1 1 1 0 1 1 0 1 0 1 0 0 1 1 0 1 0 1 1 0 0 1 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 1 1 1
+0 0 0 0 0 1 1 0 1 0 1 1 1 0 0 0 1 0 1 1 0 1 0 0 0 1 0 0 1 1 1 0 0 1 0 0 0 1 1 1 0 1 0 0 1 1 1 0 0 0 1 1 0 1 0 0 0 1 0 0 1 0 0 1 1 1 1 0 1 1 0 0 1 0 1 0 0 0 1 1 0 0 0 0 1 0 1 1 0 1 0 1 0 0 1 0 1 1 0 1 0 0 0 0 0 1 1 0 1 1
+0 0 0 1 1 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 1 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1 1 0 0 0 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 1 0 0 1 0 0 0 1 0 1 0 1 1 1 1 1 0 0 1 1 1 0 1
+1 0 0 1 1 1 1 1 0 1 0 0 1 1 1 0 1 1 0 1 0 1 1 0 0 0 0 1 0 1 1 1 0 1 0 0 1 1 1 1 1 0 0 1 0 0 0 0 0 1 1 1 0 1 0 1 1 0 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 1 1 0 1 0 1 1 0 0 1 0 0 0 1 0 1 0 1 0 1 1 0 1 1 1 1 1 0 1 0 1 0 0 0 0 1 0
+1 0 1 1 1 0 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1 1 0 1 1 1 1 1 0 1 1 0 0 1 1 1 1 0 0 0 1 0 1 0 0 0 1 1 1 1 1 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 1 1 0 1 0 0 0 0 0 1 0 1 1 0 1 1 0 1 0 0 1 0 1 0 1 0 0 0 1 0 0 1 0 1
+1 0 1 0 0 1 0 1 0 1 1 1 0 0 0 1 0 0 0 0 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 0 1 1 1 0 1 0 0 1 0 1 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 1 1 0 1 1 1 0 0 0 1 1 0 1 0 1 0 0 1 1 1 0 1 1 1 0 0 1 1 0 1 1 0 0 1 1 1 0 1 0 0 0 0 0 1 0 0
+0 1 0 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 1 1 0 0 1 0 1 0 1 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 1 1 0 0 1 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 1 1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 1 1 1 1 1 0 1 1 0 0 0 0 0 0 0 1 1
+1 0 0 0 0 0 0 1 0 0 1 1 1 0 1 1 1 0 1 1 0 0 1 0 1 1 1 0 0 1 0 1 0 1 1 0 0 1 0 0 0 0 1 1 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 0 0 1 0 1 1 0 1 1 0 0 0 1 0 0 0 1 1 0 0 0 0 0 1 0 0 0 1 1 1 0 0 1 1 1 1 0 1 0 1 1 1 0 0 1 0 0 0 1
+1 1 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 0 0 0 0 1 0 1 0 1 1 0 0 1 1 1 1 0 0 0 0 1 1 0 0 0 0 1 1 0 1 1 0 0 0 1 1 0 1 0 1 1 1 0 0 1 1 0 1 0 1 1 0 0 1 1 0 0 0 0 1 1 1 1 0 1 0 0 0 1 0 1 0 0 1 0 0 0 1 0 0 0 1 1 1 1 0 0 1 1 0 0 1 1
+0 0 1 1 1 0 0 0 1 0 0 1 0 1 0 1 1 0 1 0 0 0 1 0 1 0 0 1 1 0 0 1 1 0 0 1 0 0 0 1 1 0 0 1 1 1 0 0 0 1 0 1 1 1 0 1 0 1 0 1 1 0 1 0 0 0 0 1 1 1 1 0 1 0 0 1 1 0 0 0 1 0 0 0 1 0 0 1 1 1 0 0 1 1 0 0 1 0 0 1 0 1 0 0 1 0 1 1 0 1
+0 1 1 0 1 0 1 1 0 1 0 1 1 1 0 0 1 0 1 0 1 1 1 0 1 1 0 1 0 0 1 1 0 0 1 1 1 1 1 0 0 0 1 0 0 0 1 1 0 1 1 1 1 1 1 1 0 1 0 0 1 1 0 1 0 0 0 1 1 1 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 1 1 1 1 1 1 1 0 0 1
+0 1 0 0 0 1 0 1 1 1 0 0 0 0 1 1 1 0 0 1 0 1 0 0 0 0 1 1 0 0 1 1 0 0 0 0 0 1 0 1 1 1 0 0 0 0 0 1 0 1 0 0 0 1 1 0 0 0 0 1 1 1 1 1 1 0 1 0 1 0 1 0 0 0 0 1 0 0 1 0 1 1 1 0 0 0 1 1 1 0 1 0 1 1 1 1 1 1 1 0 0 1 0 1 0 0 0 0 1 0
+1 0 1 1 0 0 1 0 0 0 1 0 0 0 1 0 1 0 0 0 1 1 1 1 0 0 1 0 0 1 1 1 0 0 1 1 1 0 0 0 1 0 1 0 0 1 1 0 1 1 0 1 0 1 0 0 0 1 0 1 0 0 1 0 1 1 1 1 1 1 1 1 1 0 0 0 1 0 0 0 0 1 1 1 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 0 1 1 0 0 0 0 1 0 0
+0 1 0 0 1 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 0 0 0 0 1 1 0 0 1 1 0 0 1 0 0 1 1 0 0 0 0 1 1 0 1 0 1 0 1 1 1 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 1 0 1 1 0 1 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 0 1 0 1
+1 0 0 1 1 0 0 0 0 1 1 1 1 1 0 0 1 0 0 0 1 0 1 0 1 1 1 1 1 1 1 0 1 0 0 0 0 1 1 0 1 0 1 1 1 1 1 0 1 0 0 1 1 1 1 1 0 0 0 1 1 1 0 1 0 1 0 1 0 0 0 1 1 1 1 1 1 0 1 1 1 0 1 1 1 1 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 0 0 0 0 1 0 0 0 1
+1 0 0 0 0 0 1 0 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 1 0 1 1 1 1 1 1 0 1 0 0 0 0 0 1 0 1 0 1 0 1 1 0 1 1 0 0 0 1 0 1 0 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 1 1 1 1 0 1 1 0 1 0 0 1 0 1 1 1 0 0 0 0 1 1 0 1 1 1 0 1
+1 0 0 1 1 0 0 1 1 1 0 1 1 1 1 1 1 0 0 0 1 0 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 0 1 1 0 0 0 0 1 1 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 0 1 1 1 0 1 0 1 1 0 1 0 0 1 1 0 0 1 1 1 1 1 0 1 1 0 1 0 1 1 0 0 1 1 1 1 0 1 0 1 0 1 0 1 1 1 1 1 0</div>
+<div class="wrap">
+<h1 class="name"><span><i>Raha</i></span> <span><i>Golsorkhi</i></span></h1>
+<p class="sub">Software Engineer</p>
+<div class="btns"><a class="btn fill" href="Resume.pdf" download>Download resume</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+<a class="scroll" href="#about" aria-label="Scroll to About"><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></a>
+</header>
+
+<section id="about"><div class="wrap">
+<h2>About me</h2>
+<div class="about">
+<div>
+<p>I'm a Software Engineering student at York University who enjoys the space where enterprise software, data and AI meet.</p>
+<p>In 2025 I spent a year as a Jr. Developer Co-op at the Ministry of Children, Community and Social Services. I customized Siebel CRM, built Oracle Analytics reports and forms, and connected Siebel session logs to OpenSearch so developers could debug production issues without waiting on Middleware support.</p>
+<p>Before that, I trained machine learning models on datasets with 30,000+ features to help diagnose neurological diseases early, and wrote C++ for IoT sensor networks. I also build for fun: my team's app Plannect won first place at Elle Hacks.</p>
+<p>I'm looking for software, data and machine learning roles where I can ship useful work and keep learning from a strong team.</p>
+</div>
+<aside><img class="portrait" src="images/portrait.jpg" alt="Portrait of Raha Golsorkhi"><p class="honour">Member of the Dean&rsquo;s Honour Roll</p><dl class="facts">
+<dt>Studying</dt><dd>B.Sc. Honours Software Engineering, York University (2027)</dd>
+<dt>Recognition</dt><dd><a href="#award">2025 Honourable Mention, York Co-op Student of the Year</a></dd>
+<dt>Based in</dt><dd>Toronto, Ontario</dd>
+</dl></aside>
+</div></div></section>
+
+<section id="experience" class="exp"><div class="wrap">
+<h2>Experience</h2>
+<p class="lead">Enterprise software, data and machine learning, from newest to oldest.</p>
+<div class="tl2">
+<article class="entry now"><div class="ehead"><h3>Records and Data Entry Assistant<span class="badge2">Current</span></h3><div class="when">May 2026 &ndash; Present<small>Earlier: May &ndash; Dec 2024</small></div></div><p class="org">York University</p><ul class="pts"><li>Maintain <strong>accurate, up-to-date records</strong>, entering and updating high volumes of data with close attention to detail and <strong>data integrity</strong>.</li><li>Apply <strong>validation checks</strong> (duplicates, formats, completeness) before records are filed, and follow up to resolve gaps and inconsistencies.</li><li>Handle <strong>confidential information</strong> in line with university <strong>privacy, retention and records-management</strong> procedures.</li><li>Organize, index and retrieve <strong>digital and physical files</strong> so staff can find records quickly; use <strong>Excel and MS Office</strong> for tracking, sorting and reporting.</li></ul><ul class="tech" aria-label="Tools and skills"><li>Data entry</li><li>Records management</li><li>Data validation</li><li>Data integrity</li><li>Excel</li><li>Confidentiality</li></ul></article>
+<article class="entry"><div class="ehead"><h3>Jr. Developer Co-op</h3><div class="when">Jan &ndash; Dec 2025</div></div><p class="org">Ministry of Children, Community and Social Services</p><ul class="pts"><li>Customized <strong>Siebel CRM</strong> enterprise applications by configuring <strong>LOVs, data fields, field mappings and application components</strong> to meet business and operational requirements.</li><li>Developed and optimized <strong>Oracle Analytics Server (OAS) and Publisher (OAP)</strong> reports, letters and forms: integrated application data into reporting workflows and validated mappings and output for <strong>accuracy, reliability and compliance</strong>.</li><li>Integrated <strong>Siebel session-log analysis with OpenSearch</strong>, giving developers searchable logs for <strong>production troubleshooting</strong> and reducing reliance on Middleware support.</li><li>Took on <strong>Siebel integration requirements for the OAP side</strong>, speeding up the release of letters and forms.</li><li>Contributed across the full <strong>Agile SDLC</strong>: requirements analysis, development, <strong>verification and validation, testing</strong>, deployment and production support, delivering production-ready releases under <strong>OPS I&amp;IT</strong> standards with work tracked in <strong>Jira</strong>.</li><li><strong>Hosted the opening ceremony of Branch Day</strong> for MCCSS and built an <strong>interactive app and game</strong> (Imposter Getaway) to engage the audience, meeting the objectives and requirements set by <strong>David Tam, Senior Manager</strong>.</li></ul><a class="more" href="#award">Honourable Mention, Co-op Student of the Year</a><ul class="tech" aria-label="Tools and skills"><li>Siebel CRM</li><li>OAS</li><li>OAP</li><li>OpenSearch</li><li>SQL</li><li>Data mapping</li><li>Agile / SDLC</li><li>Jira</li><li>React.js</li><li>Firebase</li></ul></article>
+<article class="entry"><div class="ehead"><h3>Machine Learning Intern</h3><div class="when">May &ndash; Sep 2024</div></div><p class="org">Laboratory of Advanced Biotechnologies for Health Assessment</p><ul class="pts"><li>Led analysis of a <strong>high-dimensional dataset (30k&ndash;50k features)</strong> using <strong>Python, Pandas, NumPy, scikit-learn, TensorFlow and PyTorch</strong> to build ML models for <strong>early diagnosis of neurological diseases</strong>.</li><li>Used <strong>DBSCAN and K-means</strong> clustering to uncover patterns in <strong>4D chemical crystal structures</strong>.</li><li>Built <strong>U-Net</strong> segmentation for <strong>3D mouse brain images</strong> and applied <strong>data augmentation</strong> to improve model generalization.</li><li>Applied <strong>transfer learning and fine-tuning</strong> to adapt <strong>tumor detection models</strong> from mice to human datasets.</li></ul><ul class="tech" aria-label="Tools and skills"><li>Python</li><li>TensorFlow</li><li>PyTorch</li><li>scikit-learn</li><li>Pandas</li><li>NumPy</li><li>U-Net</li><li>DBSCAN</li><li>K-means</li></ul></article>
+<article class="entry"><div class="ehead"><h3>Arduino Programmer</h3><div class="when">May &ndash; Sep 2023</div></div><p class="org">Research at York (RAY)</p><ul class="pts"><li>Developed <strong>C++</strong> programs for <strong>IoT sensor networks</strong> and <strong>real-time embedded hardware</strong> and communication systems on <strong>Arduino</strong>.</li><li>Created <strong>Python scripts</strong> for <strong>real-time data acquisition</strong> and <strong>image processing</strong> across laser systems and sensors.</li><li>Partnered with stakeholders and a cross-functional team to define <strong>technical milestones</strong>, refine experimental requirements and <strong>deliver working prototypes on schedule</strong>.</li></ul><ul class="tech" aria-label="Tools and skills"><li>C++</li><li>Python</li><li>Arduino</li><li>IoT</li><li>Embedded systems</li><li>Image processing</li></ul></article>
+<article class="entry"><div class="ehead"><h3>Special Event Assistant</h3><div class="when">May 2023</div></div><p class="org">Federation for the Humanities and Social Sciences</p><ul class="pts"><li>Supported the planning and on-site delivery of a <strong>large academic conference</strong>, assisting with <strong>registration, attendee check-in and event logistics</strong>.</li><li>Guided <strong>attendees, speakers and volunteers</strong>, answering questions and resolving issues in <strong>real time</strong>.</li><li>Helped set up and run <strong>venues and sessions</strong>, coordinating with the events team to keep the schedule on track.</li><li>Kept <strong>event materials and attendee information</strong> organized and accurate in a fast-paced environment.</li></ul><ul class="tech" aria-label="Tools and skills"><li>Event coordination</li><li>Customer service</li><li>Logistics</li><li>Teamwork</li><li>Time management</li></ul></article>
+<article class="entry"><div class="ehead"><h3>English Instructor</h3><div class="when">Jan &ndash; Jun 2022</div></div><p class="org">Bayan Institute</p><ul class="pts"><li>Taught <strong>English as a second language</strong> to learners at different proficiency levels, covering <strong>speaking, listening, reading, writing and grammar</strong>.</li><li>Designed <strong>lesson plans and learning materials</strong>, adapting activities to each class&rsquo;s level and goals.</li><li>Tracked progress with <strong>quizzes, assignments and personalized feedback</strong>, helping students build fluency and confidence.</li><li>Developed strong <strong>communication, public speaking and mentoring</strong> skills by leading classes independently.</li></ul><ul class="tech" aria-label="Tools and skills"><li>Teaching</li><li>Curriculum planning</li><li>Public speaking</li><li>Communication</li><li>Mentoring</li></ul></article>
+</div></div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Projects</h2>
+<div class="grid">
+<article class="card win"><img class="pimg" src="images/airpod.jpg" alt="Plannect project image" onerror="this.remove()"><h3>Plannect</h3><p class="tag">First place, Elle Hacks</p>
+<p>A web app that uses AI to connect people locally with others who share their passions, generating personalized matches from their answers.</p>
+<ul class="stack"><li>React</li><li>MapBox</li><li>Node.js</li><li>GPT-3</li></ul><div class="plinks"><a href="https://devpost.com/software/plannect" target="_blank" rel="noopener">View on Devpost</a></div></article>
+<article class="card"><img class="pimg" src="images/atlas.jpg" alt="Atlas Library Chatbot project image" onerror="this.remove()"><h3>Atlas Library Chatbot</h3><p class="tag">Capstone project</p>
+<p>An AI chatbot built with TensorFlow that helps people find resources and retrieve data in York University's library system.</p>
+<ul class="stack"><li>TensorFlow</li><li>Python</li></ul><div class="plinks"><a href="https://github.com/raha-golsorkhi/ChatBotAI" target="_blank" rel="noopener">GitHub</a><a href="https://www.youtube.com/watch?v=6WVkWreZXRI" target="_blank" rel="noopener">Demo video</a></div></article>
+<article class="card"><img class="pimg" src="images/imposter.jpg" alt="Imposter Getaway game screenshot" onerror="this.remove()"><h3>Imposter Getaway</h3><p class="tag">Interactive team game</p>
+<p>An icebreaker game I designed and built, then used to open Branch Day. It got staff talking across teams.</p>
+<ul class="stack"><li>React</li><li>JavaScript</li><li>Firebase</li></ul><div class="plinks"><a href="https://github.com/raha-golsorkhi/Imposter-Getaway" target="_blank" rel="noopener">GitHub</a><a href="https://www.youtube.com/watch?v=FL9BKAMbv4M" target="_blank" rel="noopener">Demo video</a></div></article>
+</div></div></section>
+
+<section id="skills" class="sk"><div class="wrap">
+<h2>Skills</h2>
+<div class="sk-grid">
+<div class="sk-col">
+<div class="sk-card rd"><h3>Programming languages</h3><p class="hint">What I write code in</p><ul><li>Python</li><li>Java</li><li>JavaScript</li><li>TypeScript</li><li>C</li><li>C++</li><li>SQL</li><li>Linux shell scripting (Bash)</li></ul></div>
+<div class="sk-card"><h3>Machine learning</h3><p class="hint">Models and techniques</p><ul><li>TensorFlow</li><li>PyTorch</li><li>scikit-learn</li><li>U-Net</li><li>DBSCAN</li><li>K-means</li><li>Transfer learning</li><li>Data augmentation</li><li>Image segmentation</li><li>Clustering</li></ul></div>
+<div class="sk-card rd"><h3>Practices and strengths</h3><p class="hint">How I work</p><ul><li>Agile / SDLC</li><li>Requirements analysis</li><li>Verification and validation</li><li>Testing</li><li>Production support</li><li>Teamwork</li><li>Public speaking</li><li>Event hosting</li></ul></div>
+</div>
+<div class="sk-col">
+<div class="sk-card"><h3>Data and analytics</h3><p class="hint">Reporting, analysis and data quality</p><ul><li>PostgreSQL</li><li>Oracle Analytics Server (OAS)</li><li>Oracle Analytics Publisher (OAP)</li><li>Pandas</li><li>NumPy</li><li>Data analysis</li><li>Data integration</li><li>Data validation</li><li>Data visualization</li><li>Reporting</li></ul></div>
+<div class="sk-card rd"><h3>Tools and frameworks</h3><p class="hint">Building, shipping and collaborating</p><ul><li>React.js</li><li>Node.js</li><li>Express</li><li>Django</li><li>Firebase</li><li>REST APIs</li><li>Git</li><li>Jira</li><li>Siebel CRM</li><li>OpenSearch</li><li>Figma</li><li>Wix</li><li>MS Office</li></ul></div>
+</div>
+</div></div></section>
+
+<section id="contact"><div class="wrap contact">
+<h2>Let's talk</h2>
+<p style="max-width:52ch;margin:0">Have an opportunity, a question, or just want to say hi? Write your message below with your email and I'll reply to you directly.</p>
+<form class="cform" id="cform" novalidate>
+<label>Your name<input name="cname" type="text" autocomplete="name" required></label>
+<label>Your email<input name="cemail" type="email" autocomplete="email" required></label>
+<label>Message<textarea name="cmsg" required></textarea></label>
+<input class="hp" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn" type="submit">Send message</button>
+<p id="cstatus" role="status" aria-live="polite"></p>
+</form>
+<p style="margin-top:12px">Or reach me at <a href="mailto:raha.golsorkhi1@gmail.com">raha.golsorkhi1@gmail.com</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/raha-golsorkhi/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;|&nbsp; <a href="https://github.com/raha-golsorkhi" target="_blank" rel="noopener">GitHub</a></p>
+</div></section>
+</div>
+
+<div id="award" hidden>
+<header class="ahero"><div class="wrap">
+<div><h1>Honourable Mention, Co-op Student of the Year</h1>
+<p>York University, 2025. Presented by the Co-op &amp; Career Centre in recognition of outstanding work term achievements and contributions to work-integrated learning.</p></div>
+<img src="images/certificate.jpg" alt="Honourable Mention Co-op Student of the Year certificate awarded to Raha Golsorkhi by York University">
+</div></header>
+
+<section><div class="wrap">
+<h2>In my manager's words</h2>
+<blockquote class="pull" style="margin-left:0">&ldquo;Raha made a remarkable impact during her co-op term by quickly transitioning from a learner to an active contributor.&rdquo;</blockquote>
+<p class="by"><b>Roy Asaria</b>Manager, Development and Maintenance, Ontario Public Service (CYSSC)<br>Co-op supervisor statement of support, 2025</p>
+<div class="hl">
+<article><h3>Delivered beyond the plan</h3>
+<p>I developed and maintained Oracle Analytics Server letters and forms for a large Ontario government application, and shipped production-ready code through Jira-tracked work.</p>
+<q>Consistently exceeded expectations by completing more work items than originally allocated.</q></article>
+<article><h3>Took on more scope</h3>
+<p>I learned Oracle Siebel and took on the integration requirements for the OAP side, which sped up the release of letters and forms and reduced reliance on Siebel developers. I also taught myself Angular.</p>
+<q>Directly contributed to improving workflow efficiency and project delivery timelines.</q></article>
+<article><h3>Strengthened the team</h3>
+<p>I organized team-building activities and led icebreaker exercises at branch events, which grew into my Imposter Getaway game.</p>
+<q>Her presence was valued not only for her skills but also for the positive energy and inclusivity she brought.</q></article>
+</div></div></section>
+
+<section class="dark"><div class="wrap">
+<h2>Award moments</h2>
+<div class="gal">
+<figure><img src="images/award-photo.jpg" alt="Raha holding her award folder at the York University recognition event"><figcaption>Receiving the award folder at York University.</figcaption></figure>
+<figure><img src="images/group-photo.jpg" alt="Raha with fellow award recipients and staff in front of a York University backdrop"><figcaption>With fellow recipients at the recognition event.</figcaption></figure>
+</div>
+<p style="margin-top:34px"><a class="btn fill" href="#about">Back to portfolio</a></p>
+</div></section>
+</div>
+<footer><div class="wrap">Raha Golsorkhi, Toronto, Ontario</div></footer>
+
+<script>
+document.querySelectorAll('.chip').forEach(function(b){
+  b.addEventListener('click',function(){
+    var f=b.dataset.f;
+    document.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',String(c===b))});
+    document.querySelectorAll('.skills section').forEach(function(s){
+      s.classList.toggle('off',f!=='all'&&s.dataset.c!==f);
+    });
+  });
+});
+
+(function(){
+  var home=document.getElementById('home'),aw=document.getElementById('award');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,NAVH=58,current='home';
+  function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+  function scrollToY(y){
+    y=Math.max(0,y);
+    if(reduce){window.scrollTo(0,y);return;}
+    var start=window.pageYOffset,d=y-start,dur=Math.min(1200,Math.max(550,Math.abs(d)*.55)),t0=null;
+    function step(ts){if(t0===null)t0=ts;var p=Math.min((ts-t0)/dur,1);window.scrollTo(0,start+d*ease(p));if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  function targetY(h){var el=document.querySelector(h);return el?el.getBoundingClientRect().top+window.pageYOffset-NAVH+1:0;}
+  function show(view,cb){
+    if(current===view){cb();return;}
+    var out=view==='award'?home:aw,inn=view==='award'?aw:home;
+    current=view;
+    if(reduce){out.hidden=true;inn.hidden=false;window.scrollTo(0,0);cb();return;}
+    out.classList.add('fade-out');
+    setTimeout(function(){
+      out.hidden=true;out.classList.remove('fade-out');
+      inn.classList.add('fade-out');inn.hidden=false;window.scrollTo(0,0);
+      void inn.offsetWidth;inn.classList.remove('fade-out');cb();
+    },280);
+  }
+  function mark(id){
+    document.querySelectorAll('nav a').forEach(function(a){a.removeAttribute('aria-current')});
+    var l=id&&document.querySelector('nav a[href="'+id+'"]');if(l)l.setAttribute('aria-current','true');
+  }
+  function go(h){
+    if(h==='#award'){show('award',function(){mark('#award')});}
+    else{show('home',function(){scrollToY(h&&h.length>1?targetY(h):0);});}
+  }
+  var secs=['#about','#experience','#projects','#skills','#contact'],tick=false;
+  window.addEventListener('scroll',function(){
+    if(tick||current!=='home')return;tick=true;
+    requestAnimationFrame(function(){
+      tick=false;var cur=null;
+      secs.forEach(function(id){var el=document.querySelector(id);if(el&&el.getBoundingClientRect().top<=NAVH+120)cur=id;});
+      mark(cur);
+    });
+  },{passive:true});
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;
+    var h=a.getAttribute('href');if(h.length<2)return;
+    e.preventDefault();history.pushState(null,'',h);go(h);
+  });
+  window.addEventListener('popstate',function(){go(location.hash)});
+  if(location.hash==='#award'){home.hidden=true;aw.hidden=false;current='award';mark('#award');}
+  else if(location.hash.length>1){setTimeout(function(){scrollToY(targetY(location.hash))},60);}
+})();
+
+(function(){
+  // Optional: paste a Formspree (formspree.io) endpoint here to deliver messages straight to your inbox
+  // when you host this page yourself, e.g. 'https://formspree.io/f/xxxxxxx'. Left empty, the form opens
+  // the visitor's email app with the message and their email already filled in.
+  var ENDPOINT='',TO='raha.golsorkhi1@gmail.com';
+  var f=document.getElementById('cform'),st=document.getElementById('cstatus');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(f.elements.company.value)return;
+    if(!f.reportValidity())return;
+    var n=f.elements.cname.value.trim(),m=f.elements.cemail.value.trim(),t=f.elements.cmsg.value.trim();
+    if(ENDPOINT){
+      fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({name:n,email:m,message:t})})
+        .then(function(r){if(!r.ok)throw new Error();st.textContent='Thank you, '+n+'. Your message has been sent.';f.reset();})
+        .catch(function(){st.textContent='Sorry, that did not send. Please email me at '+TO+'.';});
+      return;
+    }
+    location.href='mailto:'+TO+'?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(t+'\n\nFrom: '+n+' ('+m+')');
+    st.textContent='Opening your email app with your message ready to send. If nothing opens, email me at '+TO+'.';
+  });
+})();
+</script>
+</body>
+</html>
